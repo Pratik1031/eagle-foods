@@ -31,16 +31,16 @@ const Hero = () => {
 
       {/* Text Content */}
       <div className="relative z-10 p-8 md:p-20 text-left">
+        <h2 className="text-gray-600 text-xl font-bold">
+          Simplifying Cooking , Amplifying Flavours{" "}
+        </h2>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
-          Welcome to Eagle Foods
+          <span className="text-yellow-600">Eagle Foods And Seasonings</span>
         </h1>
         <p className="mt-4 text-lg md:text-xl md:w-[25rem] text-gray-800">
-          Discover the finest quality spices and ingredients from around the
-          world.
-          <br />
-          <span className="text-yellow-500 font-bold">Taste</span>{" "}
-          <span className="font-bold">Trust</span>{" "}
-          <span className="text-yellow-500 font-bold">Tradition</span>
+          Revolutionizing mealtime with ready-to-cook gravy mixes, instant
+          blends, and premium seasonings, our innovative food solutions deliver
+          authentic flavors, convenience, and quality to kitchens everywhere.
         </p>
         <Link
           href="/products"

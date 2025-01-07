@@ -9,11 +9,10 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between mb-6">
           <div className="mb-6 md:mb-0">
             <h2 className="text-2xl font-bold text-yellow-400">
-              Eagle Foods Pvt. Ltd.
+              Eagle Foods And Seasonings
             </h2>
             <p className="mt-2 text-sm">
-              Providing the finest ingredients to the food and hospitality
-              industry.
+              Cooking made easy , Flavours made memorable.
             </p>
           </div>
 
@@ -52,14 +51,17 @@ const Footer = () => {
                 <li>
                   Email:{" "}
                   <a
-                    href="mailto:info@eaglefoods.com"
+                    href="mailto:Info@eaglefoods.co.in"
                     className="hover:text-yellow-400"
                   >
-                    info@eaglefoods.com
+                    Info@eaglefoods.co.in
                   </a>
                 </li>
-                <li>Phone: +91 123 456 7890</li>
-                <li>Address: Nagpur, Maharashtra, India</li>
+                <li>Phone: 7774998980,7775998980</li>
+                <li>
+                  Address: Plot No.41 Noor Nagar, Umred Road,Dighori,
+                  Nagpur 440034
+                </li>
               </ul>
             </div>
           </div>
@@ -83,7 +85,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="text-center text-sm">
-          <p>&copy; 2025 Eagle Foods Pvt. Ltd. All Rights Reserved.</p>
+          <p>&copy; 2025 Eagle Foods And Seasonings All Rights Reserved.</p>
         </div>
       </div>
     </footer>
