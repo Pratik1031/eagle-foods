@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
-
+import { PRODUCTS } from "@/constants/index";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 interface Product {
   id: number;
   name: string;
@@ -12,56 +13,15 @@ interface Product {
 const Products: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("All");
 
-  const categories: string[] = [
-    "All",
-    "Seasonings",
-    "Gravy Mix",
-    "RTC Gravy Paste",
-    "Instant Mixes",
-  ];
+  const categories: string[] = ["All", "Seasonings", "Gravy Mix"];
 
-  const products: Product[] = [
-    {
-      id: 1,
-      name: "Turmeric",
-      category: "Spices",
-      image: "/turmeric.jpg",
-      description: "Pure and fresh turmeric powder.",
-    },
-    {
-      id: 2,
-      name: "Cumin",
-      category: "Spices",
-      image: "/cumin.jpg",
-      description: "Aromatic cumin seeds.",
-    },
-    {
-      id: 3,
-      name: "Garam Masala",
-      category: "Blends",
-      image: "/garam-masala.jpg",
-      description: "A blend of flavorful spices.",
-    },
-    {
-      id: 4,
-      name: "Oregano",
-      category: "Herbs",
-      image: "/oregano.jpg",
-      description: "Fresh dried oregano leaves.",
-    },
-    {
-      id: 5,
-      name: "Barbecue Seasoning",
-      category: "Seasonings",
-      image: "/bbq-seasoning.jpg",
-      description: "Perfect for grilling and barbecue.",
-    },
-  ];
-
+  // Filter products based on the active category
   const filteredProducts =
     activeCategory === "All"
-      ? products
-      : products.filter((product) => product.category === activeCategory);
+      ? PRODUCTS
+      : PRODUCTS.filter(
+          (product: Product) => product.category === activeCategory
+        );
 
   return (
     <div className="w-full min-h-screen bg-gray-50 p-4 flex flex-col items-center">
@@ -93,34 +53,38 @@ const Products: React.FC = () => {
         ))}
       </div>
 
-      {/* Products Section */}
-      <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white p-4 rounded-lg shadow-md flex flex-col items-center text-center"
-          >
-            <img
-              src={product.image}
-              alt={product.name}
-              className="w-32 h-32 object-cover mb-4 rounded-md"
-            />
-            <h3 className="text-lg font-semibold text-gray-800 mb-2">
-              {product.name}
-            </h3>
-            <p className="text-sm text-gray-600 mb-4">{product.description}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* No Products Found Message */}
-      {filteredProducts.length === 0 && (
-        <div className="w-full max-w-7xl text-center py-8">
-          <p className="text-gray-600 text-sm sm:text-base">
+      {/* Product Names List Section */}
+      <div className="w-full max-w-7xl py-8">
+        {filteredProducts.length === 0 ? (
+          <p className="text-center text-gray-600 text-sm sm:text-base">
             No products found in this category.
           </p>
-        </div>
-      )}
+        ) : (
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProducts.map((product: Product) => (
+              <li
+                key={product.id}
+                className="flex items-center space-x-3 bg-white p-4 rounded-lg shadow-md hover:bg-gray-100 transition-colors"
+              >
+                {/* Icon */}
+                <FaCheckCircle className="text-yellow-500" size={20} />
+
+                {/* Product Name */}
+                <span className="text-xl font-semibold text-gray-800 hover:text-yellow-800 transition-colors">
+                  {product.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* View More Button */}
+      {/* <div className="flex justify-center mt-6">
+        <button className="bg-yellow-800 text-white px-6 py-2 rounded-md hover:bg-yellow-500 transition-colors text-lg font-semibold">
+          View More...
+        </button>
+      </div> */}
     </div>
   );
 };

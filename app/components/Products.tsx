@@ -1,4 +1,4 @@
-import PRODUCTS from "@/constants";
+import { PRODUCTS } from "@/constants";
 import React from "react";
 import ProductCard from "./ProductCard";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const Products = () => {
       {/* Product Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {limitedProducts.map((prod, index) => (
-          <ProductCard key={index} title={prod.title} image={prod.image} />
+          <ProductCard key={index} title={prod.name} image={prod.image} />
         ))}
       </div>
 

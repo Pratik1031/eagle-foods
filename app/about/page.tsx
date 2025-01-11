@@ -28,7 +28,7 @@ const About = () => {
         {/* Image Section */}
         <div className="flex justify-center items-center">
           <img
-            src="/about-image.jpg"
+            src="/about.png"
             alt="About Us"
             className="w-full max-w-md h-auto rounded-lg shadow-md"
           />
