@@ -30,11 +30,17 @@ const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className="sticky top-0 z-50 bg-white text-black p-4 shadow-xl"
+      className="sticky top-0 z-50 bg-white bg-transparent text-black p-2 lg:p-2 shadow-xl"
     >
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold flex items-center gap-4">
-          <Image src="/logo.png" alt="logo" width={120} height={100} />
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={80}
+            height={80}
+            className="lg:w-32 lg:h-32 w-24 h-20"
+          />
         </Link>
 
         <div className="lg:hidden flex items-center">
