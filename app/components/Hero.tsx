@@ -9,20 +9,20 @@ const Hero = () => {
       <div className="absolute inset-0">
         <Image src="/heroBg.png" alt="bg" layout="fill" objectFit="cover" />
         <div className="absolute inset-0 flex flex-col md:justify-between items-center space-y-8 md:space-y-0">
-          {/* First Foreground Image */}
+          {/* First Foreground Image (Visible on md and larger screens) */}
           <Image
             src="/Group 2.png"
             alt="spice1"
-            className="z-10 md:ml-[380px] md:mt-10 mt-8"
+            className="z-10 md:block hidden md:ml-[380px] md:mt-10 mt-8"
             width={352}
             height={60}
           />
 
-          {/* Second Foreground Image */}
+          {/* Second Foreground Image (Visible on md and larger screens) */}
           <Image
             src="/Group 3.png"
             alt="spice2"
-            className="z-20 md:ml-[46rem] ml-0"
+            className="z-20 md:block hidden md:ml-[46rem] ml-0"
             width={352}
             height={60}
           />
@@ -40,7 +40,7 @@ const Hero = () => {
         <p className="mt-4 text-lg md:text-xl md:w-[25rem] text-gray-800">
           Revolutionizing mealtime with ready-to-cook gravy mixes, instant
           blends, and premium seasonings, our innovative food solutions deliver
-          authentic flavors, convenience, and quality to kitchens everywhere.
+          authentic flavors, convenience, and quality to kitchens everywhere.
         </p>
         <Link
           href="/products"
